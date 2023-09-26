@@ -1,0 +1,541 @@
+.places {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 45px auto;
+	text-align: center;
+}
+
+article {
+	display: flex;
+	width: 390px;
+	flex: none;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-content: flex-start;
+	max-height: 600px;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	margin: 20px;
+	overflow: scroll;
+
+	border: 1px solid #FF5A5F;
+	border-radius: 4px;
+}
+article::-webkit-scrollbar {
+	width: 6px;
+}
+.article_subtitle {
+	font-size: 16px;
+	text-align: left;
+	width: 100%;
+	border-bottom: 1px solid #DDDDDD;
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 10px;
+}
+.article_title {
+	font-size: 30px;
+	margin: 10px auto;
+	padding: 0px;
+}
+
+article ul {
+	align-self: flex-start;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding: 0px;
+}
+
+article li {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-content: flex-start;
+	margin-bottom: 10px;
+}
+
+article .amenities {
+	margin-left: 0px;
+	width: 100%;
+	height: auto;
+}
+
+.headline {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	min-height: 80px;
+	width: 100%;
+}
+
+.price_by_night {
+	display: flex;
+	justify-content: center;
+	align-self: flex-start;
+
+	position: absolute;
+	right: 0;
+
+	line-height: 60px;
+	color: #FF5A5F;
+	font-size: 30px;
+	padding: 5px;
+	border: 4px solid #FF5A5F;
+	border-radius: 100%;
+	float: right;
+	min-width: 60px;
+	height: 60px;
+}
+
+.information {
+	display: block;
+	height: 80px;
+	width: 100%;
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+
+	padding-top: 5px;
+	padding-bottom: 12px;
+	margin-top: auto;
+	margin-bottom: 20px;
+}
+
+.max_guest, .number_rooms, .number_bathrooms {
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+.user {
+	margin-top: 5px;
+	margin-bottom: 5px;	
+}
+
+.description {
+	text-align: left;
+}
+
+h1 {
+	display: block;
+	text-align: left;
+	width: 95%;
+	display: block;
+	margin-top: 0px;
+	margin-left: 2px;
+	margin-bottom: 5px;
+	font-size: 30px;
+}
+
+article h2 {
+	width: 310px;
+	height: auto;
+	font-size: 30px;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 0;
+}
+
+.guest_icon {
+	display: inline-block;
+	background-image: url("../images/icon_group.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+}
+
+.guest_icon:hover, .bed_icon:hover, .bath_icon:hover {
+	opacity: 0.9;
+}
+
+.bed_icon {
+	display: inline-block;
+	background-image: url("../images/icon_bed.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+.bath_icon {
+	display: inline-block;
+	background-image: url("../images/icon_bath.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+/* icons for amenities */
+
+.icon_24_hour_check_in {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Air_conditioning {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Breakfast {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Buzzer\/wireless_intercom, .icon_Internet, .icon_Wireless_Internet {
+	display: inline-block;
+    background-image: url("../images/icon_wifi.png");
+    background-size: cover;
+	width: 20px;
+    height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Cable_TV, .icon_TV{
+	display: inline-block;
+	background-image: url("../images/icon_tv.png");
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+
+.icon_Carbon_monoxide_detector {
+	display: inline-block;
+	background-image: url("../images/icon_tv.png"); /* pendiente icono */
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+
+.icon_Cat\(s\), .icon_Dog\(s\), .icon_Other_pet\(s\), .icon_Pets_allowed, .icon_Pets_live_on_this_property {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png");
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+
+.icon_Doorman, .icon_Doorman_Entry {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Dryer {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Elevator_in_building {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Essentials {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Family\/kid_friendly {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Fire_extinguisher {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_First_aid_kit {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Free_parking_on_premises {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Gym {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Hair_dryer {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Hangers {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Heating {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Hot_tub {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Indoor_fireplace {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Iron {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Keypad {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Kitchen {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Laptop_friendly_workspace {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Lock_on_bedroom_door, .icon_Lockbox {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+
+.icon_Pool {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Private_entrance {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Private_living_room {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Safety_card {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Self_Check_In {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Shampoo {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Smartlock {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Smoke_detector {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Smoking_allowed {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Suitable_for_events {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+
+.icon_Washer {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+.icon_Wheelchair_accessible {
+	display: inline-block;
+    background-image: url("../images/icon_pets.png"); /* pendiente icono */
+	background-size: cover;
+    width: 20px;
+	height: 20px;
+
+	margin-right: 10px;
+}
+
+.places button{
+	align-self: self-end;
+    font-size: 18px;
+    color: white;
+    background-color: #FF5A5F;
+    height: 48px;
+    border: 0px;
+    border-radius: 4px;
+    width: 20%;
+    opacity: 1;
+
+}
+.places button a {
+	text-decoration: None;
+	color: white;
+	z-index: 0;
+}
