@@ -43,6 +43,9 @@ section.filters > button:hover {
     font-weight: 400;
     font-size: 14px;
     margin: 0 0 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
 }
 
 .popover {
@@ -112,4 +115,8 @@ section.filters > button:hover {
 
 a:hover {
     opacity: 0.9;
+}
+
+.checkbox {
+    margin: 10px;
 }

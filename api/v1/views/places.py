@@ -8,6 +8,29 @@ from models import storage
 from models.city import City
 from models.user import User
 from models.place import Place
+from models.state import State
+from models.amenity import Amenity
+from models.review import Review
+
+# Define la función my_dict para convertir objetos Place en diccionarios
+def my_dict(self, **kwargs):
+    """Convert the object to a dictionary."""
+    return {
+        "id": self.id,
+        "city_id": self.city_id,
+        "user_id": self.user_id,
+        "name": self.name,
+        "description": self.description,
+        "number_rooms": self.number_rooms,
+        "number_bathrooms": self.number_bathrooms,
+        "max_guest": self.max_guest,
+        "price_by_night": self.price_by_night,
+        "latitude": self.latitude,
+        "longitude": self.longitude,
+        "user": storage.get(User, self.user_id).to_dict()
+    }
+
+Place.to_dict = my_dict
 
 
 @app_views.route('cities/<city_id>/places',
@@ -67,3 +90,84 @@ def place_by_place_id(place_id):
                 setattr(place, k, v)
         place.save()
         return jsonify(place.to_dict()), 200
+
+@app_views.route('/places_search',
+                 methods=['POST'], strict_slashes=False)
+def places_search():
+
+    list_places = []
+    list_amenities = []
+
+    request_data = request.get_json()
+    if request_data is None:
+        abort(400, 'Not a JSON')
+
+    try:
+        if request_data['amenities']:
+            list_amenities = [amty for amty in request_data['amenities']]
+
+    except Exception:
+        pass
+
+    try:
+        if request_data["states"] and request_data["cities"]:
+            for state in request_data["states"]:
+                new_state = storage.get(State, state)
+                for city in new_state.cities:
+                    for place in city.places:
+                        list_places.append(place.to_dict())
+
+            for id in request_data["cities"]:
+                new_city = storage.get(City, id)
+                for place in new_city.places:
+                    if place not in list_places:
+                        list_places.append(place.to_dict())
+    except Exception:
+        pass
+
+    try:
+        if request_data["states"]:
+            for state in request_data["states"]:
+                new_state = storage.get(State, state)
+                for city in new_state.cities:
+                    for place in city.places:
+                        place_final = place.to_dict()
+                        if list_amenities:
+                            for amty in place.amenities:
+                                if amty.id in list_amenities:
+                                    list_places.append(place_final)
+                        else:
+                            list_places.append(place.to_dict())
+            return jsonify(list_places)
+    except Exception:
+        pass
+
+    try:
+        if request_data["cities"]:
+            for id in request_data["cities"]:
+                new_city = storage.get(City, id)
+                for place in new_city.places:
+                    place_final = place.to_dict()
+                    if list_amenities:
+                        for amty in place.amenities:
+                            if amty.id in list_amenities:
+                                list_places.append(place_final)
+                    else:
+                        list_places.append(place.to_dict())
+        return jsonify(list_places)
+    except Exception:
+        pass
+
+    if list_amenities:
+        places = storage.all(Place).values()
+        filtered_places = []
+        for place in places:
+            place_amenities = {amty.id for amty in place.amenities}
+            if set(list_amenities).issubset(place_amenities):
+                filtered_places.append(place.to_dict())
+        return filtered_places
+
+    places = storage.all(Place).values()
+    list_places = [place.to_dict() for place in places]
+
+    return list_places
